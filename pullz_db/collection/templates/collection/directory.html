@@ -1,0 +1,21 @@
+<h1>Comic Directory</h1>
+
+<form method="get">
+    Publisher: <input type="text" name="publisher">
+    Genre: <input type="text" name="genre">
+    Status:
+    <select name="status">
+        <option value="">Any</option>
+        <option value="OWNED">Owned</option>
+        <option value="PLANNED">Planned</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+{% for comic in comics %}
+  <li>{{ comic }} — {{ comic.publisher }} — {{ comic.genre }}</li>
+{% empty %}
+  <li>No results.</li>
+{% endfor %}
+</ul>

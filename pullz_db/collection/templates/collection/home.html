@@ -1,0 +1,17 @@
+<h1>Recently Added Comics</h1>
+
+<ul>
+{% for comic in recent_comics %}
+  <li>{{ comic.title }} #{{ comic.issue_number }}</li>
+{% empty %}
+  <li>No comics added yet.</li>
+{% endfor %}
+</ul>
+
+<h2>Add a New Comic</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comic</button>
+</form>

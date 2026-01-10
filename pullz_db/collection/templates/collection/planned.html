@@ -1,0 +1,8 @@
+<h1>Planned Purchases</h1>
+<ul>
+{% for comic in planned %}
+  <li>{{ comic }}</li>
+{% empty %}
+  <li>No planned purchases.</li>
+{% endfor %}
+</ul>
